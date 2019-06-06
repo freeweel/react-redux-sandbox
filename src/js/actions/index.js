@@ -1,9 +1,12 @@
 // src/js/actions/index.js
-import { ADD_ARTICLE } from "../constants/action-types";
-export function addArticle(title, id) {
-  let payload = {title: title, id: id};
-  return { type: ADD_ARTICLE, payload };
+import { ADD_ARTICLE, ADD_NAME } from "../constants/action-types";
+
+const addArticle = (title) => {
+  return { type: ADD_ARTICLE, payload: title };
 }
-export function addName(name) {
-  return { type: "ADD_NAME", name };
+
+const addName = (name) => {
+  return { type: ADD_NAME, payload: name };
 }
+
+export {addArticle, addName}

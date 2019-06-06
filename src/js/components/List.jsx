@@ -6,14 +6,16 @@ const mapStateToProps = (state) => {
   return { articles: state.articles };
 };
 
-const ConnectedList = ({ articles }) => (
-  <ul className="list-group list-group-flush">
-    {articles.map(el => (
-      <li className="list-group-item" key={el.id}>
-        {el.title}
+let key = 0;
+
+const ConnectedList = ({articles}) => (
+  <ol className="list-group list-group-flush">
+    {articles.map(articleName => (
+      <li className="list-group-item" key={++key}>
+        {articleName}
       </li>
     ))}
-  </ul>
+  </ol>
 );
 
 const List = connect(mapStateToProps)(ConnectedList);
